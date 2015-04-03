@@ -14,8 +14,14 @@
 ActiveRecord::Schema.define(version: 20150403061655) do
 
   create_table "groups", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "group_name",   limit: 50
+    t.string   "category",     limit: 50
+    t.string   "phone_number", limit: 20
+    t.text     "details",      limit: 65535
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
+
+  add_index "groups", ["group_name"], name: "index_groups_on_group_name", using: :btree
 
 end

@@ -11,5 +11,4 @@ class CreateGroups < ActiveRecord::Migration
     add_index("groups", "group_name")
   end
 
-
 end

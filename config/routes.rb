@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+    get 'groups/index'
+
+    get 'groups/show'
+
+    get 'groups/new'
+
+    get 'groups/edit'
+
+    get 'groups/delete'
+
+    post 'groups/create'
+
+    post 'groups/update'
+
+    post 'groups/destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

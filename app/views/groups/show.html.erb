@@ -1,0 +1,32 @@
+<%= link_to("Back to list", { :action => 'index' }, :class => 'back-link') %>
+
+<div class="groups show">
+  <h2>Show Groups</h2>
+
+  <table summary="Group detail view">
+    <tr>
+      <th>Name</th>
+      <td><%= @group.group_name %></td>
+    </tr>
+    <tr>
+      <th>Category</th>
+      <td><%= @group.category %></td>
+    </tr>
+    <tr>
+      <th>Phone Number</th>
+      <td><%= @group.phone_number %></td>
+    </tr>
+    <tr>
+      <th>Details</th>
+      <td><%= @group.details %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @group.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @group.updated_at %></td>
+    </tr>
+  </table>
+</div>

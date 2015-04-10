@@ -8,7 +8,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string "type", :limit => 20
       t.integer "capacity"
       t.string "phone_number", :limit => 20
-      t.string "pic"
+      #t.string "pic"
       t.text "details", :limit => 150
       t.timestamps null: false
     end

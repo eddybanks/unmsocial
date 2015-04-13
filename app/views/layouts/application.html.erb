@@ -4,11 +4,20 @@
   <title>Unmsocial</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= render 'layouts/shim' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <%= render 'layouts/nav' %>
+  <div class="row" >
+    <div class = "container-fluid">
+      <div class="col-md-offset-6 col-md-6 main-body">
+        <%= render 'layouts/header' %>
+        <%= yield %>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>

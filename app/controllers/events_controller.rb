@@ -1,7 +1,5 @@
 class EventsController < ApplicationController
 
-  layout false
-
   def index
     @events = Event.sorted
   end

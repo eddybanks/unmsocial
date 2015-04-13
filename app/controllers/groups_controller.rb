@@ -1,7 +1,5 @@
 class GroupsController < ApplicationController
 
-  layout false
-
   def index
     @groups = Group.sorted
   end

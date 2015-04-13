@@ -1,0 +1,129 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css?family=Kalam);
+@import url(https://fonts.googleapis.com/css?family=Fredoka+One);
+
+*{
+  margin: 0;
+  padding: 0;
+  color: #ccd;
+}
+
+a{
+  decoration: none;
+  font-style: none;
+}
+/* headers */
+
+h1{
+  font-family: 'Fredoka One';
+  margin: 40px 60px;
+  margin-bottom: 15px;
+	font-size: 45px;
+  color: #d90;
+  a:hover{
+    decoration: none;
+    font-style: none;
+    color: #f37;
+    opacity: .4;
+  }
+}
+
+h2{
+  font-family: 'Kalam', cursive;
+	font-size: 30px;
+  margin: 40px 60px;
+  color: #f54;
+  a:hover{
+    decoration: none;
+    font-style: none;
+    color: #f37;
+    opacity: .4;
+  }
+}
+
+h3{
+  font-family: 'Lobster', cursive;
+	font-size: 15px;
+  color: #f54;
+  a:hover{
+    decoration: none;
+    font-style: none;
+    color: #f37;
+    opacity: .4;
+  }
+}
+
+/* header */
+.lg_header{
+  min-height: 650px;
+  background-color: rgba(0,0,0,0.1);
+}
+
+.sm_header{
+  min-height: 150px;
+  background-color: rgba(0,0,0,0.1);
+}
+
+
+/* navigation */
+nav{
+  height: 60px;
+}
+
+/* footer */
+
+
+/* body */
+body{
+  background-image: url('http://lorempixel.com/1200/800/nightlife/2');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main-body{
+  min-height: 900px;
+  margin-top: 40px;
+  padding: 0;
+  background: rgba(0,0,0,0.7);
+}
+
+/* background carousel */
+/*
+.carousel,
+.item,
+.active {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+*/

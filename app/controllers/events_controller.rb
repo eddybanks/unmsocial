@@ -10,6 +10,7 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    @time = Time.at(params[:time].to_i/1000) if params[:time]
   end
 
   def create
@@ -26,6 +27,34 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def update
+    @event = Event.find(params[:id])
+
+    if @event.update_attributes(event_params)
+      redirect_to(:action => 'show', :id => @event.id)
+    else
+      render('edit')
+    end
+  end
+
+  def calendar_events
+    @events = Event.all
+    cal = []
+    @events.each do |event|
+      cal << {
+        id: event.id,
+        title: event.name,
+        description: event.details || '',
+        start: event.time.iso8601
+      }
+    end
+    render json: cal.to_json
+  end
+
+  def delete
+    @group = Event.find(params[:id])
+  end
+
   def destroy
     event = Event.find(params[:id]).destroy
     redirect_to(:action => 'index')
@@ -34,7 +63,7 @@ class EventsController < ApplicationController
   private
 
     def event_params
-      params.require(:event).permit(:name, :venue, :time, :type, :capacity, :phone_number, :details)
+      params.require(:event).permit(:name, :venue, :time, :category, :capacity, :phone_number, :details)
     end
 
 end

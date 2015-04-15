@@ -50,7 +50,6 @@ h1{
 h2{
   font-family: 'Kalam', cursive;
 	font-size: 30px;
-  margin: 40px 60px;
   color: #f54;
   a:hover{
     decoration: none;
@@ -87,6 +86,7 @@ h3{
 /* navigation */
 nav{
   height: 60px;
+  width: 100%;
 }
 
 /* footer */
@@ -94,14 +94,37 @@ nav{
 
 /* body */
 body{
-  background-image: url('http://lorempixel.com/1200/800/nightlife/2');
+  background-image: url('http://lorempixel.com/1900/1500/nightlife/2');
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .main-body{
-  min-height: 900px;
+  min-height: 950px;
   margin-top: 40px;
-  padding: 0;
   background: rgba(0,0,0,0.7);
+}
+
+/* event carousel */
+.carousel-inner{
+  z-index: 10;
+  margin-bottom: -190px;
+  margin-top: 40px;
+  height: 150px;
+}
+
+/* Google maps */
+#map-canvas {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: -200px;
+  left: 0;
+  right: 0;
+  z-index: 0;
+}
+
+#container {
+  z-index: 100;
+  position: relative;
 }

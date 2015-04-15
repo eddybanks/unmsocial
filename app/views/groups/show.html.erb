@@ -1,13 +1,8 @@
-<%= link_to("Back to list", { :action => 'index' }, :class => 'back-link') %>
-
 <div class="groups show">
-  <h2>Show Groups</h2>
+  <%= link_to("Back to list", { :action => 'index' }, :class => 'back-link') %>
+  <% @header=@group.group_name %>
 
   <table summary="Group detail view">
-    <tr>
-      <th>Name</th>
-      <td><%= @group.group_name %></td>
-    </tr>
     <tr>
       <th>Category</th>
       <td><%= @group.category %></td>

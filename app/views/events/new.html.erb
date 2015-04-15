@@ -15,11 +15,11 @@
     </tr>
     <tr>
       <th>Time</th>
-      <td><%= f.text_field(:time) %></td>
+      <td><%= f.date_select(:time, default: @time) %></td>
     </tr>
     <tr>
       <th>Type</th>
-      <td><%= f.text_field(:type) %></td>
+      <td><%= f.select :category, ["meeting", "conference"]%></td>
     </tr>
     <tr>
       <th>Capacity</th>
@@ -31,12 +31,14 @@
     </tr>
     <tr>
       <th>Details</th>
-      <td><%= f.text_field(:details) %></td>
+      <td><%= f.text_area(:details) %></td>
     </tr>
   </table>
   <div class="form-buttons">
     <%= submit_tag("Create Event") %>
   </div>
+
+  <%= params[:some_param] %>
 
   <% end %>
 

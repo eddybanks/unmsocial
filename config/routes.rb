@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get 'calendar'    =>  'static_pages#calendar'
 
+  get 'events_cal'  =>  'events#calendar_events'
+
   get 'events/show'
 
   get 'events/new'

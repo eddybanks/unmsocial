@@ -13,6 +13,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+gem 'gmaps4rails'
+gem 'geocoder'
+gem 'jquery-turbolinks'
 
 group :development, :test do
   gem 'byebug'

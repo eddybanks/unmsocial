@@ -11,12 +11,16 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require moment
 //= require fullcalendar
 //= require fullcalendar/gcal
 //= require_tree .
+//= require underscore
+//= require gmaps/google
+
 $(document).ready(function() {
 	$('#external-events .fc-event').each(function() {
 
@@ -59,22 +63,19 @@ $(document).ready(function() {
 		selectable: true,
 		selectHelper: true,
 		select: function(start, end) {
-			var title = prompt('Event Title:');
-			var eventData;
-			if (title) {
-				eventData = {
-					title: title,
-					start: start,
-					end: end
-				};
-				$('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
-			}
+			window.location.replace("/events/new?time=" + end);
+
+			//var eventData;
+
+			//if (title) {
+				//$('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+			//}
 			$('#calendar').fullCalendar('unselect');
 		},
 
-
 		// US Holidays
-		events: 'usa__en@holiday.calendar.google.com',
+		//events: 'usa__en@holiday.calendar.google.com',
+		events: "/events_cal",
 
 		eventClick: function(event) {
 			// opens events in a popup window

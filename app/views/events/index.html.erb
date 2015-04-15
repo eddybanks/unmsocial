@@ -1,5 +1,5 @@
 <% @header="Events" %>
-<div class="events index">
+<div class="events index container">
 
   <%= link_to("New Event", { :action => 'new' }, :class => 'action new') %>
 
@@ -19,14 +19,14 @@
       <td><%= event.name %></td>
       <td><%= event.venue %></td>
       <td><%= event.time %></td>
-      <td><%= event.type %></td>
+      <td><%= event.category %></td>
       <td><%= event.capacity %></td>
       <td><%= event.phone_number %></td>
       <td><%= event.details %></td>
       <td>
         <%= link_to("Show", { :action => 'show', :id => event.id }, :class =>'show') %>
         <%= link_to("Edit", { :action => 'edit', :id => event.id }, :class =>'edit') %>
-        <%= link_to("Delete", { :action => 'destroy', :id => event.id }, :class =>'destroy') %>
+        <%= link_to("Delete", { :action => 'delete', :id => event.id }, :class =>'delete') %>
       </td>
       <% end %>
     </tr>

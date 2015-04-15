@@ -11,19 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150403174352) do
+ActiveRecord::Schema.define(version: 20150415001214) do
+
+  create_table "contacts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "events", force: :cascade do |t|
     t.string   "name",         limit: 20
     t.string   "venue",        limit: 50
     t.datetime "time"
-    t.string   "type",         limit: 20
     t.integer  "capacity",     limit: 4
     t.string   "phone_number", limit: 20
     t.string   "pic",          limit: 255
-    t.text     "details",      limit: 255
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "category",     limit: 255
+    t.text     "details",      limit: 65535
   end
 
   add_index "events", ["name"], name: "index_events_on_name", using: :btree

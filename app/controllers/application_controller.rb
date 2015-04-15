@@ -3,6 +3,11 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  @hash = Gmaps4rails.build_markers(@events) do |user, marker|
+    marker.lat user.latitude
+    marker.lng user.longitude
+  end
+
   def show_events
     @events = Event.sorted
   end

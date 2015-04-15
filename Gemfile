@@ -16,9 +16,12 @@ gem 'momentjs-rails'
 gem 'gmaps4rails'
 gem 'geocoder'
 gem 'jquery-turbolinks'
+gem "rubycas-client-rails", git: "git://github.com/rubycas/rubycas-client-rails.git"
 
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end

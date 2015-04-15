@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150415001214) do
+ActiveRecord::Schema.define(version: 20150415041529) do
 
   create_table "contacts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20150415001214) do
     t.string   "phone_number",  limit: 20
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.boolean  "admin",         limit: 1
   end
 
   add_index "users", ["date_of_birth"], name: "index_users_on_date_of_birth", using: :btree

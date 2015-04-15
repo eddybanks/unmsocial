@@ -64,12 +64,6 @@ $(document).ready(function() {
 		selectHelper: true,
 		select: function(start, end) {
 			window.location.replace("/events/new?time=" + end);
-
-			//var eventData;
-
-			//if (title) {
-				//$('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
-			//}
 			$('#calendar').fullCalendar('unselect');
 		},
 
@@ -79,7 +73,8 @@ $(document).ready(function() {
 
 		eventClick: function(event) {
 			// opens events in a popup window
-			window.open(event.url, 'gcalevent', 'width=700,height=600');
+			//window.location.replace("/events/show?name=" + event.title %>);
+			//window.open(event.url, 'gcalevent', 'width=700,height=600');
 			return false;
 		},
 

@@ -18,8 +18,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url(https://fonts.googleapis.com/css?family=Lobster);
-@import url(https://fonts.googleapis.com/css?family=Kalam);
-@import url(https://fonts.googleapis.com/css?family=Fredoka+One);
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.googleapis.com/css?family=Carrois+Gothic+SC);
 
 *{
   margin: 0;
@@ -28,13 +28,19 @@
 }
 
 a{
+  color: #ced;
   decoration: none;
   font-style: none;
+  &:hover{
+    color: #cfd;
+    decoration: none;
+    font-style: none;
+  }
 }
 /* headers */
 
 h1{
-  font-family: 'Fredoka One';
+  font-family: 'Carrois Gothic SC';
   margin: 40px 60px;
   margin-bottom: 15px;
 	font-size: 45px;
@@ -48,7 +54,7 @@ h1{
 }
 
 h2{
-  font-family: 'Kalam', cursive;
+  font-family: 'Raleway', cursive;
 	font-size: 30px;
   color: #f54;
   a:hover{
@@ -127,4 +133,20 @@ body{
 #container {
   z-index: 100;
   position: relative;
+}
+
+/* Events index */
+
+.listing{
+  padding: 50px;
+  margin: 30px 40px;
+  th, td{
+    padding: 20px;
+    margin: 30px;
+  }
+}
+
+/* forms */
+.form-group{
+  color: #f54;
 }

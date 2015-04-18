@@ -1,32 +1,46 @@
-<%= link_to("<< Back to List",{ :action => 'index' }, :class => 'back-link') %>
-
 <div class="groups edit">
-  <h2>Create Group</h2>
+  <h2>Edit Group</h2>
+  <%= link_to("<< Back to List",{ :action => 'index' }, :class => 'back-link btn btn-default') %><hr>
 
-  <%= form_for(:group, :url => { action: 'update', :id => @group.id }) do |f| %>
+  <div class="row">
+    <div class="col-xs-offset-1 col-xs-9">
+      <%= form_for(:group, :url => { :action => 'update' }, id: @group.id) do |f| %>
+        <div class="form-group">
+          <label for="name">Group Name</label>
+          <%= f.text_field(:group_name, class: 'form-control') %>
+        </div>
 
-    <table summary="Groups form fields">
-      <tr>
-        <th>Group Name</th>
-        <td><%= f.text_field(:group_name) %></td>
-      </tr>
-      <tr>
-        <th>Category</th>
-        <td><%= f.text_field(:category) %></td>
-      </tr>
-      <tr>
-        <th>Phone Number</th>
-        <td><%= f.text_field(:phone_number) %></td>
-      </tr>
-      <tr>
-        <th>Details</th>
-        <td><%= f.text_field(:details) %></td>
-      </tr>
-    </table>
-    <div class="form-buttons">
-      <%= submit_tag("Edit Group") %>
+        <div class="form-group">
+          <label for="time">Meeting Time</label>
+          <%= f.time_select(:time) %>
+          <%= f.select :category, ["Select Day", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %>
+        </div>
+
+        <div class="form-group">
+          <label for="venue">Meeting Place</label>
+          <%= f.text_field(:venue, class: 'form-control') %>
+        </div>
+
+        <div class="form-group">
+          <label for="category">Category</label>
+          <%= f.select :category, ["Select Category", "Academic", "Sports", "Other"] %>
+        </div>
+
+        <div class="form-group">
+          <label for="number">Phone Number</label>
+          <%= f.text_field(:phone_number, class: 'form-control') %>
+        </div>
+
+        <div class="form-group">
+          <label for="details">Details</label>
+          <%= f.text_area(:details, size: '15x15', class: 'form-control') %>
+        </div>
+
+        <div class="form-buttons">
+          <%= submit_tag("Update", class: 'btn btn-default') %>
+        </div>
+        <% end %>
+      </div>
     </div>
-
-  <% end %>
 
 </div>

@@ -4,11 +4,19 @@ Rails.application.routes.draw do
 
   get 'users'      =>   'users#index'
 
-  get 'user'        =>  'users#show'
+  get 'users/show'
+
+  get 'users/new'
 
   get 'users/delete'
 
   get 'users/edit'
+
+  post 'users/create'
+
+  post 'users/update'
+
+  post 'users/destroy'
 
   get 'about'       =>  'static_pages#about'
 

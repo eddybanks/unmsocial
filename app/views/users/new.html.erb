@@ -4,26 +4,36 @@
 
   <div class="row">
     <div class="col-xs-offset-1 col-xs-9">
-      <%= form_for(:user, :url => { :action => 'create' }) do |f| %>
+      <%= form_for(:user, :url => { :action => 'create' }, :html => { :multipart => true } ) do |f| %>
+
         <div class="form-user">
-          <label for="name">User Name</label>
-          <%= f.text_field(:user_name, class: 'form-control') %>
+          <label for="name">First Name</label>
+          <%= f.text_field(:fname, class: 'form-control') %>
         </div>
 
         <div class="form-user">
-          <label for="time">Meeting Time</label>
-          <%= f.time_select(:time) %>
-          <%= f.select :category, ["Select Day", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %>
+          <label for="name">Last Name</label>
+          <%= f.text_field(:lname, class: 'form-control') %>
         </div>
 
         <div class="form-user">
-          <label for="venue">Meeting Place</label>
-          <%= f.text_field(:venue, class: 'form-control') %>
+          <label for="email">Details</label>
+          <%= f.text_field(:email, class: 'form-control') %>
         </div>
 
         <div class="form-user">
-          <label for="category">Category</label>
-          <%= f.select :category, ["Select Category", "Academic", "Sports", "Other"] %>
+          <label for="date_of_birth">Date of Birth</label>
+          <%= f.date_select(:date_of_birth, class: 'form-control') %>
+        </div>
+
+        <div class="form-user">
+          <label for="gender">Gender</label>
+          <%= f.select :gender, ["Male", "Female", "Other"] %>
+        </div>
+
+        <div class="form-user">
+          <label for="address">Address</label>
+          <%= f.text_field(:address, class: 'form-control') %>
         </div>
 
         <div class="form-user">
@@ -32,8 +42,8 @@
         </div>
 
         <div class="form-user">
-          <label for="details">Details</label>
-          <%= f.text_area(:details, size: '15x15', class: 'form-control') %>
+          <label for="picture">Profile Pic</label>
+          <%= f.file_field :avatar %>
         </div>
 
         <div class="form-buttons">

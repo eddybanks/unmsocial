@@ -1,32 +1,55 @@
-<%= link_to("<< Back to List",{ :action => 'index' }, :class => 'back-link') %>
+<div class="users edit">
+  <h2>Edit User Profile</h2>
+  <%= link_to("<< Back to Profile",{ :action => 'index' }, :class => 'back-link btn btn-default') %>
 
-<div class="edits edit">
-  <h2>Create Edit</h2>
+  <div class="row">
+    <div class="col-xs-offset-1 col-xs-9">
+      <%= form_for(:user, :url => { :action => 'update', :id => @edit.id }, :html => { :multipart => true } ) do |f| %>
 
-  <%= form_for(:edit, :url => { action: 'update', :id => @edit.id }) do |f| %>
+        <div class="form-user">
+          <label for="name">First Name</label>
+          <%= f.text_field(:fname, class: 'form-control') %>
+        </div>
 
-    <table summary="Edits form fields">
-      <tr>
-        <th>Edit Name</th>
-        <td><%= f.text_field(:edit_name) %></td>
-      </tr>
-      <tr>
-        <th>Category</th>
-        <td><%= f.text_field(:category) %></td>
-      </tr>
-      <tr>
-        <th>Phone Number</th>
-        <td><%= f.text_field(:phone_number) %></td>
-      </tr>
-      <tr>
-        <th>Details</th>
-        <td><%= f.text_field(:details) %></td>
-      </tr>
-    </table>
-    <div class="form-buttons">
-      <%= submit_tag("Edit Edit") %>
+        <div class="form-user">
+          <label for="name">Last Name</label>
+          <%= f.text_field(:lname, class: 'form-control') %>
+        </div>
+
+        <div class="form-user">
+          <label for="email">Details</label>
+          <%= f.text_field(:email, class: 'form-control') %>
+        </div>
+
+        <div class="form-user">
+          <label for="date_of_birth">Date of Birth</label>
+          <%= f.date_select(:date_of_birth, class: 'form-control') %>
+        </div>
+
+        <div class="form-user">
+          <label for="gender">Gender</label>
+          <%= f.select :gender, ["Male", "Female", "Other"] %>
+        </div>
+
+        <div class="form-user">
+          <label for="address">Address</label>
+          <%= f.text_field(:address, class: 'form-control') %>
+        </div>
+
+        <div class="form-user">
+          <label for="number">Phone Number</label>
+          <%= f.text_field(:phone_number, class: 'form-control') %>
+        </div>
+
+        <div class="form-user">
+          <label for="picture">Profile Pic</label>
+          <%= f.file_field :avatar %>
+        </div>
+
+        <div class="form-buttons">
+          <%= submit_tag("Edit User", class: 'btn btn-default') %>
+        </div>
+        <% end %>
+      </div>
     </div>
-
-  <% end %>
-
-</div>
+  </div>

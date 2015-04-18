@@ -6,6 +6,16 @@ GIT
       rails (>= 3.0.0)
       rubycas-client (~> 2.3.9.rc1)
 
+GIT
+  remote: git://github.com/thoughtbot/paperclip.git
+  revision: c276ad8282cd743775cdeb97335739be66e9c4a2
+  specs:
+    paperclip (4.2.1)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.5)
+      mime-types
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -60,6 +70,10 @@ GEM
     builder (3.2.2)
     byebug (4.0.5)
       columnize (= 0.9.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.7)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -189,6 +203,7 @@ DEPENDENCIES
   jquery-turbolinks
   momentjs-rails
   mysql2
+  paperclip!
   rails (= 4.2.0)
   rubycas-client-rails!
   sass-rails (~> 5.0)

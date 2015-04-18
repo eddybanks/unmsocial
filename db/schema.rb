@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150416205711) do
+ActiveRecord::Schema.define(version: 20150418194251) do
 
   create_table "contacts", force: :cascade do |t|
     t.datetime "created_at",               null: false
@@ -22,16 +22,20 @@ ActiveRecord::Schema.define(version: 20150416205711) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string   "name",         limit: 20
-    t.string   "venue",        limit: 50
+    t.string   "name",                limit: 20
+    t.string   "venue",               limit: 50
     t.datetime "time"
-    t.integer  "capacity",     limit: 4
-    t.string   "phone_number", limit: 20
-    t.string   "pic",          limit: 255
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.string   "category",     limit: 255
-    t.text     "details",      limit: 65535
+    t.integer  "capacity",            limit: 4
+    t.string   "phone_number",        limit: 20
+    t.string   "pic",                 limit: 255
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.string   "category",            limit: 255
+    t.text     "details",             limit: 65535
+    t.string   "avatar_file_name",    limit: 255
+    t.string   "avatar_content_type", limit: 255
+    t.integer  "avatar_file_size",    limit: 4
+    t.datetime "avatar_updated_at"
   end
 
   add_index "events", ["name"], name: "index_events_on_name", using: :btree
@@ -52,14 +56,19 @@ ActiveRecord::Schema.define(version: 20150416205711) do
   add_index "events_users", ["event_id", "user_id"], name: "index_events_users_on_event_id_and_user_id", using: :btree
 
   create_table "groups", force: :cascade do |t|
-    t.string   "group_name",   limit: 50
-    t.string   "category",     limit: 50
-    t.string   "phone_number", limit: 20
-    t.text     "details",      limit: 65535
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.string   "group_name",          limit: 50
+    t.string   "category",            limit: 50
+    t.string   "phone_number",        limit: 20
+    t.text     "details",             limit: 65535
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.time     "time"
-    t.string   "venue",        limit: 255
+    t.string   "venue",               limit: 255
+    t.string   "avatar_file_name",    limit: 255
+    t.string   "avatar_content_type", limit: 255
+    t.integer  "avatar_file_size",    limit: 4
+    t.datetime "avatar_updated_at"
+    t.string   "day",                 limit: 255
   end
 
   add_index "groups", ["group_name"], name: "index_groups_on_group_name", using: :btree
@@ -72,17 +81,21 @@ ActiveRecord::Schema.define(version: 20150416205711) do
   add_index "groups_users", ["group_id", "user_id"], name: "index_groups_users_on_group_id_and_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",      limit: 30
-    t.string   "fname",         limit: 15
-    t.string   "lname",         limit: 15
+    t.string   "username",            limit: 30
+    t.string   "fname",               limit: 15
+    t.string   "lname",               limit: 15
     t.date     "date_of_birth"
-    t.string   "gender",        limit: 255
-    t.text     "address",       limit: 255
-    t.string   "email",         limit: 20
-    t.string   "phone_number",  limit: 20
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.boolean  "admin",         limit: 1
+    t.string   "gender",              limit: 255
+    t.text     "address",             limit: 255
+    t.string   "email",               limit: 20
+    t.string   "phone_number",        limit: 20
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.boolean  "admin",               limit: 1
+    t.string   "avatar_file_name",    limit: 255
+    t.string   "avatar_content_type", limit: 255
+    t.integer  "avatar_file_size",    limit: 4
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["date_of_birth"], name: "index_users_on_date_of_birth", using: :btree

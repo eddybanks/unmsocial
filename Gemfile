@@ -17,6 +17,7 @@ gem 'gmaps4rails'
 gem 'geocoder'
 gem 'jquery-turbolinks'
 gem "rubycas-client-rails", git: "git://github.com/rubycas/rubycas-client-rails.git"
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
 group :development, :test do
   gem 'byebug'

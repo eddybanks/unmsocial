@@ -1,44 +1,55 @@
-<%= link_to("<< Back to List",{ :action => 'index' }, :class => 'back-link') %>
 
 <div class="events edit">
   <h2>Create Event</h2>
+  <%= link_to("<< Back to List",{ :action => 'index' }, :class => 'back-link btn btn-default') %><hr>
 
-  <%= form_for(:event, :url => { action: 'update', :id => @event.id }) do |f| %>
+  <div class="row">
+    <div class="col-xs-offset-1 col-xs-9">
+      <%= form_for(:event, :url => { :action => 'update', :id=> @event.id }) do |f| %>
+          <div class="form-group">
+            <label for="name">Event Name</label>
+            <%= f.text_field(:name, class: 'form-control') %>
+          </div>
 
-    <table summary="Events form fields">
-      <tr>
-        <th>Event Name</th>
-        <td><%= f.text_field(:name) %></td>
-      </tr>
-      <tr>
-        <th>Venue</th>
-        <td><%= f.text_field(:venue) %></td>
-      </tr>
-      <tr>
-        <th>Time</th>
-        <td><%= f.date_select(:time, default: @time) %></td>
-      </tr>
-      <tr>
-        <th>Type</th>
-        <td><%= f.select :category, ["meeting", "conference"]%></td>
-      </tr>
-      <tr>
-        <th>Capacity</th>
-        <td><%= f.text_field(:capacity) %></td>
-      </tr>
-      <tr>
-        <th>Phone Number</th>
-        <td><%= f.text_field(:phone_number) %></td>
-      </tr>
-      <tr>
-        <th>Details</th>
-        <td><%= f.text_area(:details) %></td>
-      </tr>
-    </table>
-    <div class="form-buttons">
-      <%= submit_tag("Edit Event") %>
+          <div class="form-group">
+            <label for="venue">Venue</label>
+            <%= f.text_field(:venue, class: 'form-control') %>
+          </div>
+
+          <div class="form-group">
+            <label for="time">Time</label>
+            <%= f.datetime_select(:time, default: @time) %>
+          </div>
+
+          <div class="form-group">
+            <label for="type">Type</label>
+            <%= f.select :category, ["Select Type", "meeting", "conference", "party", "camping trip", "other"]%>
+          </div>
+
+          <div class="form-group">
+            <label for="capacity">Capacity</label>
+            <%= f.text_field(:capacity, class: 'form-control') %>
+          </div>
+
+          <div class="form-group">
+            <label for="number">Phone Number</label>
+            <%= f.text_field(:phone_number, class: 'form-control') %>
+          </div>
+
+          <div class="form-group">
+            <label for="details">Details</label>
+            <%= f.text_area(:details, size: '15x15',class: 'form-control') %>
+          </div>
+
+
+          <div class="form-buttons">
+            <%= submit_tag("Update", class: 'btn btn-default') %>
+          </div>
+
+          <%= params[:some_param] %>
+
+      <% end %>
     </div>
-
-  <% end %>
+  </div>
 
 </div>

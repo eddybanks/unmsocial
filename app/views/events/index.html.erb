@@ -19,7 +19,7 @@
             <h2 class="title"><%= link_to(event.name, { :action => 'show', :id => event.id }, :class =>'title') %></h2>
             <p class="desc"><%= event.details %></p>
             <ul>
-              <li style="width:33%;">1 <span class="glyphicon glyphicon-ok"></span></li>
+              <li style="width:33%;"><%= link_to("JOIN", { :action => 'show', :id => event.id }, :class =>'title') %></li>
               <li style="width:34%;"><%= event.capacity %><span class="fa fa-male"></span></li>
             </ul>
           </div>

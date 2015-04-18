@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Event.sorted
+    @events = Event.time_sort
   end
 
   def show
@@ -17,6 +17,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
 
     if @event.save
+      flash[:notice] = "Event created successfully!"
       redirect_to(:action => 'index')
     else
       render('new')
@@ -31,6 +32,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
 
     if @event.update_attributes(event_params)
+      flash[:notice] = "Event updated successfully!"
       redirect_to(:action => 'show', :id => @event.id)
     else
       render('edit')
@@ -57,6 +59,7 @@ class EventsController < ApplicationController
 
   def destroy
     event = Event.find(params[:id]).destroy
+    flash[:notice] = "The event '#{event.name}' was deleted successfully!"
     redirect_to(:action => 'index')
   end
 

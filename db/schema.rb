@@ -11,11 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150415041529) do
+ActiveRecord::Schema.define(version: 20150416205711) do
 
   create_table "contacts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "name",       limit: 255
+    t.text     "message",    limit: 65535
+    t.string   "email",      limit: 255
   end
 
   create_table "events", force: :cascade do |t|
@@ -55,6 +58,8 @@ ActiveRecord::Schema.define(version: 20150415041529) do
     t.text     "details",      limit: 65535
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.time     "time"
+    t.string   "venue",        limit: 255
   end
 
   add_index "groups", ["group_name"], name: "index_groups_on_group_name", using: :btree

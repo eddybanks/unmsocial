@@ -1,43 +1,43 @@
-<div class="groups new">
-  <h2>Create Group</h2>
+<div class="users new">
+  <h2>Create User Profile</h2>
   <%= link_to("<< Back to List",{ :action => 'index' }, :class => 'back-link') %>
 
   <div class="row">
     <div class="col-xs-offset-1 col-xs-9">
-      <%= form_for(:group, :url => { :action => 'create' }) do |f| %>
-        <div class="form-group">
-          <label for="name">Group Name</label>
-          <%= f.text_field(:group_name, class: 'form-control') %>
+      <%= form_for(:user, :url => { :action => 'create' }) do |f| %>
+        <div class="form-user">
+          <label for="name">User Name</label>
+          <%= f.text_field(:user_name, class: 'form-control') %>
         </div>
 
-        <div class="form-group">
+        <div class="form-user">
           <label for="time">Meeting Time</label>
           <%= f.time_select(:time) %>
           <%= f.select :category, ["Select Day", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %>
         </div>
 
-        <div class="form-group">
+        <div class="form-user">
           <label for="venue">Meeting Place</label>
           <%= f.text_field(:venue, class: 'form-control') %>
         </div>
 
-        <div class="form-group">
+        <div class="form-user">
           <label for="category">Category</label>
           <%= f.select :category, ["Select Category", "Academic", "Sports", "Other"] %>
         </div>
 
-        <div class="form-group">
+        <div class="form-user">
           <label for="number">Phone Number</label>
           <%= f.text_field(:phone_number, class: 'form-control') %>
         </div>
 
-        <div class="form-group">
+        <div class="form-user">
           <label for="details">Details</label>
           <%= f.text_area(:details, size: '15x15', class: 'form-control') %>
         </div>
 
         <div class="form-buttons">
-          <%= submit_tag("Create Group", class: 'btn btn-default') %>
+          <%= submit_tag("Create User", class: 'btn btn-default') %>
         </div>
         <% end %>
       </div>

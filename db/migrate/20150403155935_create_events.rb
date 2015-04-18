@@ -5,7 +5,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string "name"
       t.string "venue"
       t.datetime "time"
-      t.string "category"
+      t.string "type"
       t.integer "capacity"
       t.string "phone_number", :limit => 20
       #t.string "pic"

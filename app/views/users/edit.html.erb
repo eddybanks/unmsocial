@@ -1,0 +1,32 @@
+<%= link_to("<< Back to List",{ :action => 'index' }, :class => 'back-link') %>
+
+<div class="edits edit">
+  <h2>Create Edit</h2>
+
+  <%= form_for(:edit, :url => { action: 'update', :id => @edit.id }) do |f| %>
+
+    <table summary="Edits form fields">
+      <tr>
+        <th>Edit Name</th>
+        <td><%= f.text_field(:edit_name) %></td>
+      </tr>
+      <tr>
+        <th>Category</th>
+        <td><%= f.text_field(:category) %></td>
+      </tr>
+      <tr>
+        <th>Phone Number</th>
+        <td><%= f.text_field(:phone_number) %></td>
+      </tr>
+      <tr>
+        <th>Details</th>
+        <td><%= f.text_field(:details) %></td>
+      </tr>
+    </table>
+    <div class="form-buttons">
+      <%= submit_tag("Edit Edit") %>
+    </div>
+
+  <% end %>
+
+</div>

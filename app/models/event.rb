@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
 
   scope :type_sort, lambda { order("events.type ASC")}
 
-  scope :time_sort, lambda { order("events.time ASC")}
+  scope :time_sort, lambda { order("events.time DESC")}
 
   scope :type, lambda { |query|
     where(["type LIKE ?", "%#{query}%"])

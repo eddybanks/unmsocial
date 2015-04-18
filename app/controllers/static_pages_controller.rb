@@ -1,7 +1,6 @@
 class StaticPagesController < ApplicationController
 
   def home
-    #render layout: false
   end
 
   def about
@@ -11,6 +10,7 @@ class StaticPagesController < ApplicationController
   end
 
   def contact
+    @contact = Contact.all
   end
 
 end

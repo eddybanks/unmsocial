@@ -18,12 +18,12 @@
 
           <div class="form-group">
             <label for="time">Time</label>
-            <%= f.date_select(:time, default: @time) %>
+            <%= f.datetime_select(:time, default: @time) %>
           </div>
 
           <div class="form-group">
             <label for="type">Type</label>
-            <%= f.select :category, ["meeting", "conference"]%>
+            <%= f.select :category, ["Select Type", "meeting", "conference", "party", "camping trip", "other"]%>
           </div>
 
           <div class="form-group">

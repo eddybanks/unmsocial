@@ -1,18 +1,38 @@
 <% @header="Events" %>
-<div class="events index container">
+<div class="events index">
 
-  <%= link_to("New Event", { :action => 'new' }, :class => 'action new') %>
+  <%= link_to("Create New Event", { :action => 'new' }, :class => 'action new btn btn-default') %><hr>
 
-  <% @events.each do |event| %>
-    <table class="listing" summary="Event list">
-      <tr class="header">
-        <th><%= event.time.to_date.to_formatted_s(:long_ordinal) %></th>
-        <th><%= link_to(event.name, { :action => 'show', :id => event.id }, :class =>'show') %></th>
-      </tr>
-      <tr>
-        <td><%= event.time.to_time.to_formatted_s(:long_ordinal) %></td>
-        <td><%= event.details %></td>
-      </tr>
-    </table>
-  <% end %>
+  <div class="row">
+    <div class="[ col-xs-12 col-sm-offset-1 col-sm-10 ]">
+      <ul class="event-list">
+        <% @events.each do |event| %>
+        <li>
+          <time datetime="2014-07-20 2000">
+            <span class="day"><%= event.time.to_s(:day) %></span>
+            <span class="month"><%= event.time.to_s(:month) %></span>
+            <span class="year"><%= event.time.to_s(:year) %></span>
+            <span class="time"><%= event.time.to_s(:time) %></span>
+          </time>
+          <%= image_tag('pic1.JPG') %>
+          <div class="info">
+            <h2 class="title"><%= link_to(event.name, { :action => 'show', :id => event.id }, :class =>'title') %></h2>
+            <p class="desc"><%= event.details %></p>
+            <ul>
+              <li style="width:33%;">1 <span class="glyphicon glyphicon-ok"></span></li>
+              <li style="width:34%;"><%= event.capacity %><span class="fa fa-male"></span></li>
+            </ul>
+          </div>
+          <div class="social">
+            <ul>
+              <li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
+              <li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
+              <li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
+            </ul>
+          </div>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>

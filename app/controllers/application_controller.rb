@@ -8,6 +8,13 @@ class ApplicationController < ActionController::Base
     RubyCAS::Filter.filter self
   end
 
+  def logout
+    # optionally do some local cleanup here
+    # ...
+
+    CASClient::Frameworks::Rails::Filter.logout(self)
+  end
+
   @hash = Gmaps4rails.build_markers(@events) do |user, marker|
     marker.lat user.latitude
     marker.lng user.longitude

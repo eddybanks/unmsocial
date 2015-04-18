@@ -2,13 +2,21 @@ Rails.application.routes.draw do
 
   root                  'static_pages#home'
 
-  get 'about'       =>  'static_pages#about'
+  get 'users'      =>   'users#index'
 
-  get 'contact'     =>  'static_pages#contact'
+  get 'user'        =>  'users#show'
+
+  get 'users/delete'
+
+  get 'users/edit'
+
+  get 'about'       =>  'static_pages#about'
 
   get 'events'      =>  'events#index'
 
   get 'calendar'    =>  'static_pages#calendar'
+
+  get 'contacts'     =>  'contacts#new'
 
   get 'events_cal'  =>  'events#calendar_events'
 
@@ -41,5 +49,9 @@ Rails.application.routes.draw do
   post 'groups/update'
 
   post 'groups/destroy'
+
+  post 'contacts/create' => 'contacts#create'
+
+  get 'comments'    =>  'static_pages#comments'
 
 end

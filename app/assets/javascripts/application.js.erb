@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require bootstrap
 //= require turbolinks
 //= require moment
 //= require fullcalendar
@@ -68,15 +69,16 @@ $(document).ready(function() {
 		},
 
 		// US Holidays
-		//events: 'usa__en@holiday.calendar.google.com',
+		events: 'usa__en@holiday.calendar.google.com',
 		events: "/events_cal",
 
 		eventClick: function(event) {
 			// opens events in a popup window
-			//window.location.replace("/events/show?name=" + event.title %>);
+			window.location.replace("/events/show?id=" + event.id);
 			//window.open(event.url, 'gcalevent', 'width=700,height=600');
 			return false;
 		},
+    eventColor: '#586',
 
 		loading: function(bool) {
 			$('#loading').toggle(bool);

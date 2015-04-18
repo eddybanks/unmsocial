@@ -24,7 +24,7 @@
 *{
   margin: 0;
   padding: 0;
-  color: #ccd;
+  color: turquoise;
 }
 
 a{
@@ -37,6 +37,7 @@ a{
     font-style: none;
   }
 }
+
 /* headers */
 
 h1{
@@ -88,11 +89,20 @@ h3{
   background-color: rgba(0,0,0,0.1);
 }
 
+#logo_name{
+  font-family: 'Carrois Gothic SC';
+	font-size: 35px;
+  margin: 0px 200px;
+  color: #990;
+}
 
 /* navigation */
 nav{
   height: 60px;
   width: 100%;
+  .navbar-right{
+    margin-right: 30px;
+  }
 }
 
 /* footer */
@@ -100,14 +110,15 @@ nav{
 
 /* body */
 body{
-  background-image: url('http://lorempixel.com/1900/1500/nightlife/2');
+  //background-image: url('http://lorempixel.com/1900/1500/nightlife/2');
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: rgba(0,0,0,0.9);
 }
 
 .main-body{
-  min-height: 950px;
-  margin-top: 40px;
+  text-align: center;
+  min-height: 1050px;
   background: rgba(0,0,0,0.7);
 }
 
@@ -138,8 +149,9 @@ body{
 /* Events index */
 
 .listing{
-  padding: 50px;
-  margin: 30px 40px;
+  padding: 20px;
+  margin: 30px;
+  background: rgba(255,220,220,0.2);
   th, td{
     padding: 20px;
     margin: 30px;
@@ -149,4 +161,25 @@ body{
 /* forms */
 .form-group{
   color: #f54;
+}
+
+table{
+  width: 800px;
+  th{
+    color: #fed;
+  }
+  button{
+    color: #ffd;
+  }
+  #event_name{
+    font-size: 1.5em;
+  }
+}
+
+.button{
+  color: #ffd;
+}
+
+.fc-header-title {
+    background-color: red !important;
 }

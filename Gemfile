@@ -20,11 +20,15 @@ gem "rubycas-client-rails", git: "git://github.com/rubycas/rubycas-client-rails.
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
 group :development, :test do
-  gem 'pg'
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'sprockets-rails'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end

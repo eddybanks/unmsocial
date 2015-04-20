@@ -25,4 +25,5 @@ group :development, :test do
   gem 'spring'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'sprockets-rails'
 end

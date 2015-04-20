@@ -3,26 +3,41 @@
 
   <%= link_to("Create New Group", { :action => 'new' }, :class => 'action new btn btn-default') %><hr>
 
-  <table class="listing" summary="Group list">
-    <tr class="header">
-      <th>Group</th>
-      <th>Category</th>
-      <th>Phone Number</th>
-      <th>Details</th>
-      <th>Actions</th>
-    </tr>
-    <% @groups.each do |group| %>
-    <tr>
-      <td><%= group.group_name %></td>
-      <td><%= group.category %></td>
-      <td><%= group.phone_number %></td>
-      <td><%= group.details %></td>
-      <td class="actions">
-        <%= link_to("Show", { :action => 'show', :id => group.id }, :class => 'action show') %>
-        <%= link_to("Edit", { :action => 'edit', :id => group.id }, :class => 'action edit') %>
-        <%= link_to("Delete", { :action => 'delete', :id => group.id }, :class => 'action delete') %>
-      </td>
-    </tr>
-    <% end %>
-  </table>
+  <div class="container">
+    <div class="row">
+      <% @groups.each do |group| %>
+      <div class="col-sm-8 col-md-4">
+        <div class="panel panel-default panel-card">
+          <div class="panel-heading">
+            <%= image_tag("pic1.JPG", alt: "some random pic") %>
+            <button class="btn btn-primary btn-sm" role="button">JOIN</button>
+          </div>
+          <div class="panel-body text-center">
+            <h4 class="panel-header"><%= link_to(group.group_name, { :action => 'show', :id => group.id }, :class => 'action show') %></h4>
+            <small><%= group.details %></small>
+          </div>
+          <div class="panel-thumbnails">
+            <div class="row">
+              <div class="col-xs-4">
+                <div class="thumbnail">
+                  <%= link_to("Show", { :action => 'show', :id => group.id }, :class => 'action show') %>
+                </div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="thumbnail">
+                    <%= link_to("Edit", { :action => 'edit', :id => group.id }, :class => 'action edit') %>
+                  </div>
+                </div>
+                <div class="col-xs-4">
+                <div class="thumbnail">
+                  <%= link_to("Delete", { :action => 'delete', :id => group.id }, :class => 'action delete') %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
 </div>

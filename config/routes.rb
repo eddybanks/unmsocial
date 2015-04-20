@@ -60,6 +60,6 @@ Rails.application.routes.draw do
 
   post 'contacts/create' => 'contacts#create'
 
-  get 'comments'    =>  'static_pages#comments'
+  get 'comments'    =>  'faqcomments#index'
 
 end

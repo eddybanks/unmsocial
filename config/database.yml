@@ -13,8 +13,8 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: unmsocial
-  password: ''
+  username: root
+  password: '1234'
   socket: /var/run/mysqld/mysqld.sock
 
 development:
@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: unmsocial_production
-  username: unmsocial
-  password: <%= ENV['UNMSOCIAL_DATABASE_PASSWORD'] %>
+  username: root
+  password: '1234'

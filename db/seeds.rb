@@ -13,3 +13,7 @@ admin = User.create!(
             email: "eddybanks@unm.edu",
             admin: true
 )
+
+first_comment = Faqcomment.create!(
+            comment: "Feel free to leave constructive comments and questions. Check out the FAQs before asking questions!"
+)

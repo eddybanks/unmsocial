@@ -48,6 +48,10 @@ class UsersController < ApplicationController
       redirect_to(:action => 'index')
     end
 
+    def comments
+      @comments = Faqcomments.all
+    end
+    
     private
 
       def user_params

@@ -11,23 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150418194251) do
+ActiveRecord::Schema.define(version: 20150418220527) do
 
   create_table "contacts", force: :cascade do |t|
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
     t.string   "name",       limit: 255
     t.text     "message",    limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.string   "email",      limit: 255
   end
 
   create_table "events", force: :cascade do |t|
-    t.string   "name",                limit: 20
-    t.string   "venue",               limit: 50
+    t.string   "name",                limit: 255
+    t.string   "venue",               limit: 255
     t.datetime "time"
     t.integer  "capacity",            limit: 4
     t.string   "phone_number",        limit: 20
-    t.string   "pic",                 limit: 255
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
     t.string   "category",            limit: 255
@@ -54,6 +53,15 @@ ActiveRecord::Schema.define(version: 20150418194251) do
   end
 
   add_index "events_users", ["event_id", "user_id"], name: "index_events_users_on_event_id_and_user_id", using: :btree
+
+  create_table "faqcomments", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.text     "comment",    limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "faqcomments", ["user_id"], name: "index_faqcomments_on_user_id", using: :btree
 
   create_table "groups", force: :cascade do |t|
     t.string   "group_name",          limit: 50
@@ -101,4 +109,5 @@ ActiveRecord::Schema.define(version: 20150418194251) do
   add_index "users", ["date_of_birth"], name: "index_users_on_date_of_birth", using: :btree
   add_index "users", ["username"], name: "index_users_on_username", using: :btree
 
+  add_foreign_key "faqcomments", "users"
 end

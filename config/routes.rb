@@ -62,4 +62,6 @@ Rails.application.routes.draw do
 
   get 'comments'    =>  'faqcomments#index'
 
+  get 'admin'       => 'admin#index'
+
 end

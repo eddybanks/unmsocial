@@ -1,6 +1,36 @@
 <section class="main-body events show">
-<% @header= @event.name %>
-  <%= link_to("Back to list", { :action => 'index' }, :class => 'back-link btn btn-default') %><hr>
+  <div class="container">
+      <div class="fb-profile">
+          <%= image_tag("pic6.jpg", size: '900x400', class: "fb-image-lg", align:"left", alt:"Event image") %>
+          <div class="fb-profile-text">
+              <h1><%= @event.name %></h1>
+              <p></p>
+          </div>
+      </div>
+  </div>
+  <%= link_to("Back to list", { :action => 'index' }, :class => 'back-link btn btn-default pull-right') %><hr>
   <div class="event detail view">
+    <div class="row">
+      <div class="col-xs-3">
+        <ul class="list-group">
+          <li class="list-group-item text-muted" contenteditable="false">Event</li>
+          <li class="list-group-item text-right"><span class="pull-left"><strong class="">Created On</strong></span><%= @event.created_at.to_formatted_s(:long_ordinal) %></li>
+          <li class="list-group-item text-right"><span class="pull-left"><strong class="">Last Join</strong></span><%= @event.users.last.created_at.to_formatted_s(:long_ordinal) %></li>
+          <li class="list-group-item text-right"><span class="pull-left"><strong class="">Created by</strong></span><%= @event.users.first.username %></li>
+        </ul>
+      </div>
+      <div class="col-xs-8 min-main">
+        <div class="row">
+          <div class="col-xs-12 pads">
+            Time: <%= @event.time.to_formatted_s(:long_ordinal) %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 pads">
+            <%= @event.details %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

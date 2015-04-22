@@ -192,3 +192,13 @@ background-color: rgb(221, 75, 57) !important;
   padding: 10px 0px 9px;
 }
 }
+
+.min-main{
+  background: rgb(220,220,220);
+  padding: 30px;
+  border-radius: 10px;
+  & .pads{
+    color: #f50;
+    margin: 10px;
+  }
+}

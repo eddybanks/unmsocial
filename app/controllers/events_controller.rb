@@ -65,10 +65,15 @@ class EventsController < ApplicationController
 
   def c_events_users
     event = Event.find(params[:id])
-    event.users << current_user unless event.users.include? current_user
-    event.save
-    flash[:notice] = "Event updated successfully!"
-    redirect_to(:action => 'show', :id => event.id)
+    if event.users.include? current_user
+      flash[:notice] = "You already joined the event!"
+      redirect_to(:action => 'index')
+    else
+      event.users << current_user
+      event.save
+      flash[:notice] = "You successfully joined the event!"
+      redirect_to(:action => 'show', :id => event.id)
+    end
   end
 
   private

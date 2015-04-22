@@ -98,9 +98,9 @@ var ready = (function() {
 		$('.search-input').focus();
 	});
 
-  $("#mytable .checkall").click(function () {
-    if ($("#mytable .checkall").is(':checked')) {
-      $("#mytable input[type=checkbox]").each(function () {
+  $("#users_table").click(function () {
+    if ($("#users_table").is(':checked')) {
+      $("#users_table input[type=checkbox]").each(function () {
         $(this).prop("checked", true);
       });
 

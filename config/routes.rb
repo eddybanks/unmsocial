@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   get 'users/delete'
 
-  get 'users/edit'
+  get 'user_edit'   =>  'users#edit'
 
   post 'users/create'
 

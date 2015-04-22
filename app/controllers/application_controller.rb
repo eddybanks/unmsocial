@@ -11,7 +11,6 @@ class ApplicationController < ActionController::Base
   end
 
   def auth_user
-    flash[:notice] = "Please create a user profile for the site!"
     redirect_to new_users_path unless current_user
   end
 

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    skip_before_filter :auth_user
 
     def index
       @users = User.all
@@ -14,10 +15,13 @@ class UsersController < ApplicationController
 
     def create
       @user = User.new(user_params)
+      @user.username = session[:cas_user]
+      @user.email = session[:cas_user] + "@unm.edu"
+      @user.admin = false
 
       if @user.save
         flash[:notice] = "User Profile successfully created!"
-        redirect_to(:action => 'index')
+        redirect_to root_path
       else
         render('new')
       end
@@ -51,10 +55,10 @@ class UsersController < ApplicationController
     def comments
       @comments = Faqcomments.all
     end
-    
+
     private
 
       def user_params
-        params.require(:user).permit(:username, :fname, :lname, :date_of_birth, :gender, :address, :email, :phone_number, :admin)
+        params.require(:user).permit(:username, :fname, :lname, :date_of_birth, :gender)
       end
 end

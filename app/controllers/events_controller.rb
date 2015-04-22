@@ -63,6 +63,14 @@ class EventsController < ApplicationController
     redirect_to(:action => 'index')
   end
 
+  def c_events_users
+    event = Event.find(params[:id])
+    event.users << current_user unless event.users.include? current_user
+    event.save
+    flash[:notice] = "Event updated successfully!"
+    redirect_to(:action => 'show', :id => event.id)
+  end
+
   private
 
     def event_params

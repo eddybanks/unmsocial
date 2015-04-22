@@ -17,33 +17,13 @@
         </div>
 
         <div class="form-user">
-          <label for="email">Details</label>
-          <%= f.text_field(:email, class: 'form-control') %>
-        </div>
-
-        <div class="form-user">
           <label for="date_of_birth">Date of Birth</label>
-          <%= f.date_select(:date_of_birth, class: 'form-control') %>
+          <%= f.date_select(:date_of_birth, start_year: 1950, class: 'form-control') %>
         </div>
 
         <div class="form-user">
           <label for="gender">Gender</label>
           <%= f.select :gender, ["Male", "Female", "Other"] %>
-        </div>
-
-        <div class="form-user">
-          <label for="address">Address</label>
-          <%= f.text_field(:address, class: 'form-control') %>
-        </div>
-
-        <div class="form-user">
-          <label for="number">Phone Number</label>
-          <%= f.text_field(:phone_number, class: 'form-control') %>
-        </div>
-
-        <div class="form-user">
-          <label for="picture">Profile Pic</label>
-          <%= f.file_field :avatar %>
         </div>
 
         <div class="form-buttons">

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150418220527) do
+ActiveRecord::Schema.define(version: 20150421233505) do
 
   create_table "contacts", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20150418220527) do
     t.string   "avatar_content_type", limit: 255
     t.integer  "avatar_file_size",    limit: 4
     t.datetime "avatar_updated_at"
+    t.integer  "created_by",          limit: 4
   end
 
   add_index "events", ["name"], name: "index_events_on_name", using: :btree
@@ -77,6 +78,7 @@ ActiveRecord::Schema.define(version: 20150418220527) do
     t.integer  "avatar_file_size",    limit: 4
     t.datetime "avatar_updated_at"
     t.string   "day",                 limit: 255
+    t.integer  "created_by",          limit: 4
   end
 
   add_index "groups", ["group_name"], name: "index_groups_on_group_name", using: :btree

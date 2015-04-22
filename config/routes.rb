@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get 'users/show'
 
-  get 'users/new'
+  get 'new_users'   =>  'users#new'
 
   get 'users/delete'
 
@@ -14,9 +14,13 @@ Rails.application.routes.draw do
 
   post 'users/create'
 
+  get 'users/create'
+
   post 'users/update'
 
   post 'users/destroy'
+
+  get 'c_events_users' => 'events#c_events_users'
 
   get 'about'       =>  'static_pages#about'
 
@@ -63,5 +67,7 @@ Rails.application.routes.draw do
   get 'comments'    =>  'faqcomments#index'
 
   get 'admin'       => 'admin#index'
+
+  get 'logout'      => 'application#logout'
 
 end

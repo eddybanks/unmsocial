@@ -31,10 +31,8 @@
              <li class="divider"></li>
              <li><%= link_to raw('Edit Profile<span class="glyphicon glyphicon-user pull-right"></span>'), '#' %></li>
              <li class="divider"></li>
-             <% if current_user.username = "eddybanks" %>
              <li><%= link_to raw('Admin<span class="glyphicon glyphicon-user pull-right"></span>'), admin_path %></li>
              <li class="divider"></li>
-             <% end %>
              <li><%= link_to raw('Sign Out<span class="glyphicon glyphicon-log-out pull-right"></span>'), logout_path %></li>
            </ul>
          </li>

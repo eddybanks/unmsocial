@@ -1,11 +1,10 @@
-
 <div class="events edit">
-  <h2>Create Event</h2>
+  <h2>Edit Event</h2>
   <%= link_to("<< Back to List",{ :action => 'index' }, :class => 'back-link btn btn-default') %><hr>
 
   <div class="row">
     <div class="col-xs-offset-1 col-xs-9">
-      <%= form_for(:event, :url => { :action => 'update', :id=> @event.id }) do |f| %>
+      <%= form_for :event, :url => { :action => 'update', :id=> @event.id }, :html => { :multipart => true } do |f| %>
           <div class="form-group">
             <label for="name">Event Name</label>
             <%= f.text_field(:name, class: 'form-control') %>
@@ -23,7 +22,7 @@
 
           <div class="form-group">
             <label for="type">Type</label>
-            <%= f.select :category, ["Select Type", "meeting", "conference", "party", "camping trip", "other"]%>
+            <%= f.select :category, ["Select Type", "meeting", "conference", "party", "camping trip", "other"] %>
           </div>
 
           <div class="form-group">
@@ -34,6 +33,11 @@
           <div class="form-group">
             <label for="number">Phone Number</label>
             <%= f.text_field(:phone_number, class: 'form-control') %>
+          </div>
+
+          <div class="form-group">
+            <label for="pic">Pic</label>
+            <%= f.file_field :avatar %>
           </div>
 
           <div class="form-group">

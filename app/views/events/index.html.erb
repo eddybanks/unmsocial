@@ -1,7 +1,7 @@
 <% @header="Events" %>
 <div class="events index">
 
-  <%= link_to("Create New Event", { :action => 'new' }, :class => 'action new btn btn-default') %><hr>
+  <%= link_to 'Create New Event', new_event_path, :class => 'action new btn btn-default' %><hr>
 
   <div class="row">
     <div class="[ col-xs-12 col-sm-offset-1 col-sm-10 ]">
@@ -16,7 +16,7 @@
           </time>
           <%= image_tag('pic1.JPG') %>
           <div class="info">
-            <h2 class="title"><%= link_to(event.name, { :action => 'show', :id => event.id }, :class =>'title') %></h2>
+            <h2 class="title"><%= link_to(event.name, event_path(event), :class =>'title') %></h2>
             <p class="desc"><%= event.details %></p>
             <ul>
               <li style="width:33%;"><%= link_to("JOIN", { :action => 'c_events_users', :id => event.id }, :class =>'title') %></li>

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     skip_before_filter :auth_user
+    helper_method :edit
 
     def index
       @users = User.all

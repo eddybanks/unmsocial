@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root                  'static_pages#home'
 
+  resources :events
+  
   get 'users'      =>   'users#index'
 
   get 'users/show'
@@ -32,19 +34,6 @@ Rails.application.routes.draw do
 
   get 'events_cal'  =>  'events#calendar_events'
 
-  get 'events/show'
-
-  get 'events/new'
-
-  get 'events/edit'
-
-  get 'events/delete'
-
-  post 'events/create'
-
-  post 'events/update'
-
-  post 'events/destroy'
 
   get 'groups'        =>  'groups#index'
 

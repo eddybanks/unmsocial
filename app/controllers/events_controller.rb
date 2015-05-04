@@ -63,7 +63,7 @@ class EventsController < ApplicationController
     redirect_to(:action => 'index')
   end
 
-  def c_events_users
+  def c_events_users                                                            # This method prevents users from joining events twice
     event = Event.find(params[:id])
     if event.users.include? current_user
       flash[:notice] = "You already joined the event!"
